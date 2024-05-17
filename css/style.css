@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
+
+/* General Reset */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+:root {
+	/********* Colors *********/
+	--white: hsl(0, 0%, 100%);
+	--purple: hsl(237, 63%, 64%);
+
+	/* Background colors */
+	--background: #f7f7fe;
+	--btn-background: linear-gradient(
+		to right,
+		hsl(236, 72%, 79%),
+		hsl(237, 63%, 64%)
+	);
+	--background-purple: linear-gradient(
+		to bottom right,
+		hsl(236, 72%, 79%),
+		hsl(237, 63%, 64%)
+	);
+
+	/* Color Pricing Toggle */
+	--btn-light-purple: hsl(236, 72%, 79%);
+	--btn-bg-toggle: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+
+	/* Neutral colors */
+	--very-light-grayish-blue: hsl(240, 78%, 98%);
+	--light-grayish-blue: hsl(234, 14%, 74%);
+	--grayish-blue: hsl(233, 13%, 49%);
+	--dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+body {
+	font-family: 'Montserrat', Sans-Serif;
+	font-weight: 700;
+	font-size: 1.5rem;
+	line-height: 1.5;
+	min-height: 100svh;
+	color: var(--grayish-blue);
+	background-color: var(--background);
+	position: relative;
+}
+
+body::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: url('../images/bg-top.svg'), url('../images/bg-bottom.svg');
+	background-repeat: no-repeat, no-repeat;
+	background-position:
+		top right,
+		bottom left;
+	z-index: -1;
+}
+
+/************ PRICING CONTAINER ************/
+.pricing {
+	max-width: 144rem;
+	padding: 5rem 2.4rem;
+	margin: auto;
+}
+
+.section__title {
+	font-size: 3.2rem;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+}
+
+.pricing__type {
+	list-style: none;
+	max-width: 23.9rem;
+	font-size: 1.5rem;
+	color: var(--light-grayish-blue);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 4rem auto 5rem;
+}
+
+/* Pricing toggle */
+.toggle {
+	width: 5.6rem;
+	height: 3.2rem;
+	background: var(--btn-bg-toggle);
+	border-radius: 10rem;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.1s ease-in;
+}
+
+.toggle::before {
+	content: '';
+	width: 2.4rem;
+	height: 2.4rem;
+	position: absolute;
+	top: 50%;
+	left: 0.4rem;
+	transform: translateY(-50%);
+	background-color: var(--white);
+	border-radius: 50%;
+	transition: all 0.1s ease-in;
+}
+
+.toggle.active::before {
+	left: 0.4rem;
+	background-color: var(--white);
+	transform: translate(100%, -50%);
+}
+
+/* Pricing container */
+.pricing__container {
+	max-width: 105rem;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1.5fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+/* Basic and master plans */
+.pricing__plan:nth-child(1) {
+	border-top-left-radius: 0.8rem;
+	border-bottom-left-radius: 0.8rem;
+}
+
+.pricing__plan:nth-child(3) {
+	border-top-right-radius: 0.8rem;
+	border-bottom-right-radius: 0.8rem;
+}
+
+/* Recommended Plan */
+.pricing__plan:nth-child(2) {
+	min-width: 32.6rem;
+	max-height: 50.1rem;
+	min-height: 45.4rem;
+	padding: 5.6rem 3.2rem;
+	align-items: center;
+	border-radius: 0.8rem;
+	color: var(--white);
+	background-image: var(--background-purple);
+}
+
+.pricing__plan:nth-child(2) .plan-price {
+	color: var(--white);
+}
+
+.pricing__plan:nth-child(2) .plan-features li {
+	border-top: 0.8px solid var(--white);
+}
+
+.pricing__plan:nth-child(2) .plan-features li:last-child {
+	border-bottom: 0.8px solid var(--white);
+}
+
+.pricing__plan {
+	max-width: 35rem;
+	min-width: 32.7rem;
+	max-height: 45.3rem;
+	padding: 3.2rem;
+	background-color: var(--white);
+	box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.04);
+}
+
+.plan-type {
+	font-size: 1.8rem;
+	font-weight: inherit;
+}
+
+.plan-price {
+	max-width: 20.6rem;
+	margin: auto;
+	font-size: 7.2rem;
+	letter-spacing: -2.16px;
+	line-height: 1;
+	color: var(--dark-grayish-blue);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.8rem;
+	padding-top: 2rem;
+}
+
+.plan-price span {
+	font-size: 4rem;
+	letter-spacing: -1.2px;
+}
+
+.plan-features {
+	list-style: none;
+	max-width: 28.8rem;
+	margin-top: 2.5rem;
+	margin-bottom: 2.8rem;
+}
+
+.plan-features li {
+	padding: 1.5rem;
+	border-top: 0.8px solid var(--light-grayish-blue);
+}
+
+.plan-features li:last-child {
+	border-bottom: 0.8px solid var(--light-grayish-blue);
+}
+
+/* Btn styles */
+.btn:link,
+.btn:visited {
+	display: inline-block;
+	font-size: 1.3rem;
+	font-weight: inherit;
+	letter-spacing: 1.39px;
+	color: var(--white);
+	text-decoration: none;
+	text-transform: uppercase;
+	min-width: 100%;
+	padding: 1rem 3.5rem;
+	border-radius: 0.5rem;
+	background: var(--btn-background);
+	cursor: pointer;
+	transition: all 0.3s ease-in;
+	position: relative;
+}
+
+.btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: var(--white);
+	border: 1px solid var(--purple);
+	border-radius: 0.5rem;
+	z-index: -1;
+	transition: all 0.3s ease-in;
+}
+
+.btn:hover,
+.btn:active {
+	color: var(--purple);
+	z-index: 1;
+}
+
+.pricing__plan:nth-child(2) .btn::before {
+	border: none;
+	background: none;
+	z-index: -1;
+}
+
+.pricing__plan:nth-child(2) .btn:link,
+.pricing__plan:nth-child(2) .btn:visited {
+	border: 1px solid var(--white);
+	color: var(--purple);
+	background: var(--white);
+}
+
+.pricing__plan:nth-child(2) .btn:hover,
+.pricing__plan:nth-child(2) .btn:active {
+	color: var(--white);
+	background: none;
+	z-index: 1;
+}
