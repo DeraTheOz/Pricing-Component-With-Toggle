@@ -70,6 +70,66 @@ body::before {
 	z-index: -1;
 }
 
+/*********** Reuseable styles **************/
+/* Btn styles */
+.btn:link,
+.btn:visited {
+	display: inline-block;
+	font-size: 1.3rem;
+	font-weight: inherit;
+	letter-spacing: 1.39px;
+	color: var(--white);
+	text-decoration: none;
+	text-transform: uppercase;
+	min-width: 100%;
+	padding: 1rem 3.5rem;
+	border-radius: 0.5rem;
+	background: var(--btn-background);
+	cursor: pointer;
+	transition: all 0.3s ease-in;
+	position: relative;
+}
+
+.btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: var(--white);
+	border: 1px solid var(--purple);
+	border-radius: 0.5rem;
+	z-index: -1;
+	transition: all 0.3s ease-in;
+}
+
+.btn:hover,
+.btn:active {
+	color: var(--purple);
+	z-index: 1;
+}
+
+.pricing__plan:nth-child(2) .btn::before {
+	border: none;
+	background: none;
+	z-index: -1;
+}
+
+.pricing__plan:nth-child(2) .btn:link,
+.pricing__plan:nth-child(2) .btn:visited {
+	border: 1px solid var(--white);
+	color: var(--purple);
+	background: var(--white);
+}
+
+.pricing__plan:nth-child(2) .btn:hover,
+.pricing__plan:nth-child(2) .btn:active {
+	color: var(--white);
+	background: none;
+	z-index: 1;
+}
+
 /************ PRICING CONTAINER ************/
 .pricing {
 	max-width: 144rem;
@@ -218,63 +278,4 @@ body::before {
 
 .plan-features li:last-child {
 	border-bottom: 0.8px solid var(--light-grayish-blue);
-}
-
-/* Btn styles */
-.btn:link,
-.btn:visited {
-	display: inline-block;
-	font-size: 1.3rem;
-	font-weight: inherit;
-	letter-spacing: 1.39px;
-	color: var(--white);
-	text-decoration: none;
-	text-transform: uppercase;
-	min-width: 100%;
-	padding: 1rem 3.5rem;
-	border-radius: 0.5rem;
-	background: var(--btn-background);
-	cursor: pointer;
-	transition: all 0.3s ease-in;
-	position: relative;
-}
-
-.btn::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: var(--white);
-	border: 1px solid var(--purple);
-	border-radius: 0.5rem;
-	z-index: -1;
-	transition: all 0.3s ease-in;
-}
-
-.btn:hover,
-.btn:active {
-	color: var(--purple);
-	z-index: 1;
-}
-
-.pricing__plan:nth-child(2) .btn::before {
-	border: none;
-	background: none;
-	z-index: -1;
-}
-
-.pricing__plan:nth-child(2) .btn:link,
-.pricing__plan:nth-child(2) .btn:visited {
-	border: 1px solid var(--white);
-	color: var(--purple);
-	background: var(--white);
-}
-
-.pricing__plan:nth-child(2) .btn:hover,
-.pricing__plan:nth-child(2) .btn:active {
-	color: var(--white);
-	background: none;
-	z-index: 1;
 }
