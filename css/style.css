@@ -224,11 +224,11 @@ body::before {
 }
 
 .pricing__plan:nth-child(2) .plan-features li {
-	border-top: 0.8px solid var(--white);
+	border-top: 0.4px solid var(--white);
 }
 
 .pricing__plan:nth-child(2) .plan-features li:last-child {
-	border-bottom: 0.8px solid var(--white);
+	border-bottom: 0.4px solid var(--white);
 }
 
 .pricing__plan {
@@ -273,9 +273,9 @@ body::before {
 
 .plan-features li {
 	padding: 1.5rem;
-	border-top: 0.8px solid var(--light-grayish-blue);
+	border-top: 0.4px solid var(--light-grayish-blue);
 }
 
 .plan-features li:last-child {
-	border-bottom: 0.8px solid var(--light-grayish-blue);
+	border-bottom: 0.4px solid var(--light-grayish-blue);
 }
